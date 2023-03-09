@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="background_styles.css">
+      <link rel="stylesheet" href="styles.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="../script.js" defer></script>
+      <title>VTMA</title>
+    </head>
+    <body>
+      <nav class="navbar">
+        <div class="brand-title">VTMA </div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+ <li><a href="#">Applications</a></li>
+<li><a href="https://tma.anzim.repl.co/pilots/routes">Routes</a></li>
+  <li><a href="https://discord.gg/77NBfqh8Hw">Discord</a></li>
+   <li><a href="https://tma.anzim.repl.co/pilots/login/index.html">Login</a></li>
+    <li><a href="https://tma.anzim.repl.co/info/times/index.html">Times</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+<!-- Info Panel -->
+
+<div class="info-container">
+  <div class="info-item">
+    <img src="https://cdn.discordapp.com/attachments/1015269130577903779/1082996741021900850/IMG_2824.jpg" alt="Bild 1">
+    <div class="info-text">
+      <h3>About Us</h3>
+      <p>Who are we?</p>
+      <div class="overlay">
+        <p>We are two People who loves the Maldives and the Airline TMA</p>
+      </div>
+    </div>
+  </div>
+  <div class="info-item">
+    <img src="https://cdn.discordapp.com/attachments/1015269130577903779/1083016787785957406/IMG_2829.jpg" alt="Bild 2">
+    <div class="info-text">
+      <h3>Information</h3>
+      <p>What is out goal?</p>
+      <div class="overlay">
+        <p>Our goal is tha everyone can join a airline withot paying anything.</p>
+      </div>
+    </div>
+  </div>
+  <div class="info-item">
+    <img src="https://cdn.discordapp.com/attachments/1015269130577903779/1083016807432060938/IMG_2830.jpg" alt="Bild 3">
+    <div class="info-text">
+      <h3>Routes</h3>
+      <p>Where can I fly?</p>
+      <div class="overlay">
+        <p>When you are a pilot here you can fly anywhere in the Maldives!</p>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    </body>
+
+  <script>
+  const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+})
+
+// Button Info
+
+  const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', () => {
+  btn.style.display = 'none';
+});
+
+// Info Panel Script
+
+    const infoItems = document.querySelectorAll(".info-item");
+
+infoItems.forEach((item) => {
+  const img = item.querySelector("img");
+  const infoText = item.querySelector(".info-text");
+
+  img.addEventListener("click", () => {
+    infoText.classList.toggle("active");
+  });
+});
+
+
+</script>
+
+</html>
+
+

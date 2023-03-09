@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+* {
+    box-sizing: border-box;
+    font-family: Raleway;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+  text-decoration: none;
+background-color: #cbf0ff;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f44336;
+    color: #5c5c5c;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: #d3e2ff;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: #cbf0ffff;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #cbf0ff;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+
+/*Flight Login Styles*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+select {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.logo {
+  position: absolute;
+  top: 483px;
+  left: 6px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+
+.logo img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #888;
+  font-size: 12px;
+}
+
+select {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+ padding-right: 20px;
+
+}
+
+select, option {
+  font-family: 'Raleway', sans-serif;
+}
+
+input[type="time"] {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  width: 200px;
+  font-size: 16px;
+  color: #666;
+}
+
+input[type="time"]:focus::before {
+  content: attr(value);
+  display: none;
+}
+
+input[type="time"]::before {
+  content: attr(value);
+  color: #ccc;
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  pointer-events: none;
+}
+
+input[type="time"]:focus {
+  outline: none;
+  border-color: #0066ff;
+  box-shadow: 0 0 5px #0066ff;
+}

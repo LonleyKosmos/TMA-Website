@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+  <head>
+    <title>VTMA</title>
+     <link rel="icon" href="https://cdn.discordapp.com/attachments/1015269130577903779/1082629187866726400/IMG_2804.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../routes/style.css">
+  </head>
+  <body>
+ 
+         <nav class="navbar">
+        <div class="brand-title">VTMA </div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+ <li><a href="#">Applications</a></li>
+<li><a href="https://tma.anzim.repl.co/pilots/routes">Routes</a></li>
+  <li><a href="https://discord.gg/77NBfqh8Hw">Discord</a></li>
+   <li><a href="https://tma.anzim.repl.co/pilots/login/index.html">Login</a></li> 
+   <li><a href="https://tma.anzim.repl.co/">Hub</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <!--Route Login-->
+    <form id="flightForm">
+  <label for="origin">Abflugort:</label>
+  <input type="text" id="origin" name="origin" required>
+
+  <label for="destination">Zielort:</label>
+  <input type="text" id="destination" name="destination" required>
+
+  <label for="aircraft">Flugzeugtyp:</label>
+  <select id="aircraft" name="aircraft">
+    <option value="DHC-6-300 Twin Otter">DHC-6-300 Twin Otter</option>
+    <option value="DHC-6-200 Twin Otter">DHC-6-200 Twin Otter</option>
+    <option value="DHC-6-100 Twin Otter">DHC-6-100 Twin Otter</option>
+  </select>
+
+<label for="abflugszeit">Abflugszeit:</label>
+<input type="time" id="abflugszeit" name="abflugszeit" placeholder="Wähle deine Abflugszeit">
+
+  <button type="submit">Flug hinzufügen</button>
+</form>
+
+<select id="flightsList">
+  <option disabled selected hidden>Wähle einen Flug aus</option>
+</select>
+
+<div class="logo">
+  <img src="https://cdn.discordapp.com/attachments/1015269130577903779/1082629187866726400/IMG_2804.png" alt="Logo">
+</div>
+
+<div class="footer">
+  <p>Die Flugpläne werden nicht Gespeichert</p>
+</div>
+
+    
+    
+  </body>
+</html>
+
+<script>
+  
+  const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+})
+
+// Button Info
+
+  const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', () => {
+  btn.style.display = 'none';
+});
+  
+  // rout logger
+  const flightForm = document.getElementById("flightForm");
+const flightsList = document.getElementById("flightsList");
+
+flightForm.addEventListener("submit", (event) => {
+  event.preventDefault(); // verhindert das Neuladen der Seite
+  const formData = new FormData(flightForm);
+  const origin = formData.get("origin");
+  const destination = formData.get("destination");
+  const aircraft = formData.get("aircraft");
+  const departureTime = formData.get("departureTime");
+
+  const newFlight = document.createElement("option");
+  newFlight.innerText = `${origin} - ${destination} (${aircraft}) - ${departureTime}`;
+  flightsList.appendChild(newFlight);
+  flightForm.reset();
+});
+
+</script>

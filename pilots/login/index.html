@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VTMA</title>
+<link rel="stylesheet" href="../login/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+  
+</head>
+<body>
+
+  <nav class="navbar">
+        <div class="brand-title">VTMA </div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+ <li><a href="#">Applications</a></li>
+<li><a href="https://tma.anzim.repl.co/pilots/routes">Routes</a></li>
+  <li><a href="https://discord.gg/77NBfqh8Hw">Discord</a></li>
+   <li><a href="https://tma.anzim.repl.co/pilots/login/index.html">Login</a></li>       
+          </ul>
+        </div>
+      </nav>
+
+  
+ <div class="login-form">
+  <h2>Gast anmelden</h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <button type="submit">Anmelden</button>
+  </form>
+  <p class="guest-login">Als Gast anmelden</p>
+</div>
+  
+</body>
+</html>
+
+<script>
+const guestLogin = document.querySelector(".guest-login");
+const loginForm = document.querySelector(".login-form");
+
+guestLogin.addEventListener("click", () => {
+  loginForm.style.display = "block";
+  guestLogin.style.display = "none";
+});
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.querySelector("#name").value;
+  const email = document.querySelector("#email").value;
+  // speicherung der daten
+  console.log(`Gast-Account erstellt mit Name: ${name} und Email: ${email}`);
+  loginForm.style.display = "none";
+});
+
+// Navbar Script
+
+  const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+})
+  
+</script>
